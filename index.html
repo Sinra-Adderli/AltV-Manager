@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="dark">
+
+  <!-- Верхняя панель -->
+  <div class="title-bar">
+    <span class="title-text">AltV Manager</span>
+    <div class="window-controls">
+      <button id="min-btn" class="window-btn minimize"></button>
+      <button id="close-btn" class="window-btn close"></button>
+    </div>
+  </div>
+
+  <div class="header">
+    <div class="profile">
+      <img src="" class="avatar" id="avatar">
+      <div class="username" id="username">User name</div>
+    </div>
+    <div class="nav-icon" id="navIcon">
+      <img src="gear.png" alt="Settings" class="nav-img">
+    </div>
+  </div>
+
+  <!-- Основной контейнер -->
+  <div class="container">
+    
+    <div id="mainView">
+      <!-- Параметры запуска -->
+      <div class="section">
+
+        <h2 class="section-title">⚙️ Параметры запуска</h2>
+        <div class="toggle-item">
+          <label>Debug Mode</label>
+          <label class="toggle-switch">
+            <input type="checkbox" id="debug">
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+
+        <div class="toggle-item">
+          <label>Discord Overlay</label>
+          <label class="toggle-switch">
+            <input type="checkbox" id="discordOverlay">
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+
+        <div class="toggle-item">
+          <label>External Console</label>
+          <label class="toggle-switch">
+            <input type="checkbox" id="externalConsole">
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+
+        <div class="branch-group">
+          <button class="branch-btn" data-value="release">Release</button>
+          <button class="branch-btn" data-value="rc">RC</button>
+          <button class="branch-btn" data-value="dev">Dev</button>
+        </div>
+
+      </div>
+
+      <!-- Кнопки с toml и exe -->
+      <div class="section file-actions branch-group-2">
+        <button id="openToml" class="gradient-btn">Открыть toml</button>
+        <button id="launchAltv" class="gradient-btn">Запустить altV</button>
+      </div>
+    </div>
+
+    <!-- Settings View (изначально скрыт) -->
+    <div id="settingsView" style="display: none;">
+      <div class="section">
+        <div class="toggle-item">
+          <label>Темный режим</label>
+          <label class="toggle-switch">
+            <input type="checkbox" id="themeToggleSwitch">
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">📂 Путь до папки altV</h2>
+        <div class="input-group">
+          <input type="text" id="altvPathInput" placeholder="Путь к alt файлам...">
+          <button id="savePathBtn" class="gradient-btn">💾</button>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">📃 Путь до ahk файла</h2>
+        <div class="input-group">
+          <input type="text" id="ahkPathInput" placeholder="Полный путь к AHK файлу">
+          <button id="saveAhkPathBtn" class="gradient-btn">💾</button>
+        </div>
+      </div>      
+
+    </div>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>

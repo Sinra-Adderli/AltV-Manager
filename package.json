@@ -1,0 +1,31 @@
+{
+  "name": "altV_Manager",
+  "version": "1.1.0",
+  "description": "altV_Manager",
+  "author": "Sinra Adderli",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "dependencies": {
+    "@electron/remote": "^2.1.2",
+    "@iarna/toml": "^2.2.5",
+    "electron-prompt": "^1.7.0"
+  },
+  "devDependencies": {
+    "electron": "^25.0.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.example.altvmanager",
+    "win": {
+      "target": "nsis",
+      "icon": "icon.ico",
+      "certificateFile": "",
+      "certificatePassword": "",
+      "rfc3161TimeStampServer": "http://timestamp.digicert.com",
+      "signingHashAlgorithms": ["sha256"]
+    }
+  }
+}
